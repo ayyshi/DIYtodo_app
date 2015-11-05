@@ -22,6 +22,11 @@ ActiveRecord::Schema.define(version: 20151104213429) do
     t.datetime "updated_at"
   end
 
+  create_table "categories_users", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
@@ -39,11 +44,6 @@ ActiveRecord::Schema.define(version: 20151104213429) do
     t.string   "avatar_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "users_categories", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "category_id"
   end
 
 end

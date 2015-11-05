@@ -12,7 +12,7 @@
       <%= current_user.username %> signed in | <%= link_to "Logout", logout_path %>
     </div>
     <div>
-      <%= link_to "See Your Lists", user_categories_path(current_user) %>
+      <%= link_to "See Your Lists", user_path(current_user) %>
     </div>
   <% else %>
     <div>

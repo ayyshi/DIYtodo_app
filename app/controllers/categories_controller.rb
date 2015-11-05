@@ -14,7 +14,9 @@ class CategoriesController < ApplicationController
   end
 
   def create
+    user = User.find(params[:id])
     category = Category.new(category_params)
+    user.categories.push(category)
 
     if category.save
       redirect_to "index"

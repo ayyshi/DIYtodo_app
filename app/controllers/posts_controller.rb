@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def create
     post = Post.new(post_params)
+    binding.pry
 
     if post.save
       redirect_to "index"
@@ -46,7 +47,8 @@ class PostsController < ApplicationController
       :title,
       :description,
       :goal_date,
-      :completed_date
+      :completed_date,
+      :user_id
     )
   end
 end

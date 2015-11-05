@@ -1,6 +1,5 @@
-<%= link_to "Create New Post", new_post_path %>
-
-<% @categories.each do |category| %>
+<!-- view for individual categories -->
+<% @user.categories do |category| %>
   <h2><%= category.status %></h2>
   <ul>
     <li>
@@ -8,7 +7,6 @@
         <h3><%= post.title %></h3>
         <p><%= post.description %></p>
         <p><%= post.goal_date %> | <%= post.completed_date %></p>
-        <%= link_to "Create New Post", new_post_path(post) %>
       <% end %>
     </li>
   </ul>

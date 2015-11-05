@@ -11,10 +11,22 @@
   <% end %>
 
   <p>
-    <%= f.text_field :title, placeholder: "title" %><br>
-    <%= f.text_field :description, placeholder: "description" %><br>
-    <%= f.date :goal_date, placeholder: "goal date" %><br>
-    <%= f.date :completed_date, placeholder: "completed date" %><br>
+    title<br><%= f.text_field :title %>
+  </p>
+  <p>
+    description<br><%= f.text_area :description %>
+  </p>
+  <p>
+    goal date<br><%= f.date_field :goal_date %>
+  </p>
+  <p>
+    completed date<br><%= f.date_field :completed_date %>
+  </p>
+  <%= f.hidden_field :user_id, current_user.id %>
+  <p>
+    <%= f.collection_select :category, :status, %>
+  </p>
+  <p>
     <%= f.submit "Submit" %>
   </p>
 
