@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     if user.save
       redirect_to "/"
     else
-      render :new
+      render "new"
     end
   end
 
@@ -33,11 +33,15 @@ class UsersController < ApplicationController
     if user.update(user_params)
       redirect_to "/"
     else
-      render :edit
+      render "edit"
     end
   end
 
   def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    redirect_to users_path
   end
 
   private
