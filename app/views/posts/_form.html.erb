@@ -1,0 +1,21 @@
+<%= form_for @post do |f| %>
+
+  <% if @post.errors.any? %>
+    <div id="error_message">
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.text_field :title, placeholder: "title" %><br>
+    <%= f.text_field :description, placeholder: "description" %><br>
+    <%= f.date :goal_date, placeholder: "goal date" %><br>
+    <%= f.date :completed_date, placeholder: "completed date" %><br>
+    <%= f.submit "Submit" %>
+  </p>
+
+<% end %>

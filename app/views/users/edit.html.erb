@@ -1,3 +1,5 @@
 <%= render "form" %>
 
+<%= link_to "Delete Account", user_path, method: :delete, data: {confirm: "Are you sure?"}%>
+
 <%= link_to "Back to Login", "/" %>

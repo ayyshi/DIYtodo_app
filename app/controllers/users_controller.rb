@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :authorize, except: [:new, :create]
 
   def index
-    @users = Users.all
   end
 
   def show
@@ -41,7 +40,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
 
-    redirect_to users_path
+    redirect_to root_path
   end
 
   private

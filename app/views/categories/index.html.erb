@@ -1,0 +1,12 @@
+<%= @categories.each do |category| %>
+  <h2><%= category.status %></h2>
+  <ul>
+    <li>
+      <% category.posts.each do |post| %>
+        <h3><%= post.title %></h3>
+        <p><%= post.description %></p>
+        <p><%= post.goal_date %> | <%= post.completed_date %></p>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
