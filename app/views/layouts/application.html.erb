@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DIYtodoApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div>
+    <% if current_user %>
+      <%= current_user.username %> signed in | <%= link_to "Logout", "/logout" %>
+    <% else %>
+      <%= link_to "Login", "/" %>
+    <% end %>
+  </div>
+
+
+<%= yield %>
+
+</body>
+</html>
