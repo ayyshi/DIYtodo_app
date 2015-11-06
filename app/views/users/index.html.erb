@@ -1,5 +1,5 @@
 <% @users.each do |user| %>
-<a href="<%=user_path(user)%>">
+<a href="<%= user_path(user) %>">
   <div>
     <%= user.username %><br>
     <img src="<%= user.avatar_url %>"></img>

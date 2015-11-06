@@ -17,9 +17,12 @@ class PostsController < ApplicationController
     user = current_user
     post = Post.new(post_params)
     user.posts.push(post)
+    if !user.categories.include?(post.category)
+      user.categories.push(post.category)
+    end
 
     if post.save
-      redirect_to user_path(user)
+      redirect_to user_path(current_user)
     else
       render "new"
     end
