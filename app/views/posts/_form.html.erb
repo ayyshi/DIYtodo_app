@@ -22,7 +22,10 @@
   <p>
     completed date<br><%= f.date_field :completed_date %>
   </p>
-  <%= f.hidden_field (:user_id => current_user.id) %>
+  <p>
+    category<br>
+    <%= f.select :category_id, options_from_collection_for_select(@categories, 'id', 'status') %>
+  </p>
   <p>
     <%= f.submit "Submit" %>
   </p>

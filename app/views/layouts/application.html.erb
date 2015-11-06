@@ -13,13 +13,13 @@
     </div>
     <div>
       <%= link_to "Home", users_path %> |
+      <%= link_to "Edit Account", edit_user_path(current_user) %> |
       <%= link_to "Your Lists", user_path(current_user) %> |
       <%= link_to "Create New Post", new_post_path %> |
       <%= link_to "Create New Category", new_category_path %>
     </div>
   <% else %>
     <div>
-      <%= link_to "Login", "/" %>
     </div>
   <% end %>
 

@@ -10,14 +10,16 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @categories = Category.all
   end
 
   def create
     user = current_user
-    post = user.Post.new(post_params)
+    post = Post.new(post_params)
+    user.posts.push(post)
 
     if post.save
-      redirect_to "index"
+      redirect_to user_path(user)
     else
       render "new"
     end
@@ -38,6 +40,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    post = User.find(params[:id])
+    post.destroy
+
+    redirect_to category_path
   end
 
   private
@@ -47,7 +53,8 @@ class PostsController < ApplicationController
       :title,
       :description,
       :goal_date,
-      :completed_date
+      :completed_date,
+      :category_id
     )
   end
 end

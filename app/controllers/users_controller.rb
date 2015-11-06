@@ -7,6 +7,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = current_user
+  end
+
+  def show_all
+    # test
     @user = User.find(params[:id])
   end
 
@@ -32,17 +37,17 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
 
     if user.update(user_params)
-      redirect_to "/"
+      redirect_to user_path
     else
-      render "edit"
+      render 'edit'
     end
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+    user = User.find(params[:id])
+    user.delete
 
-    redirect_to root_path
+    redirect_to "/"
   end
 
   private
