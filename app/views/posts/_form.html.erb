@@ -22,10 +22,6 @@
   <p>
     completed date<br><%= f.date_field :completed_date %>
   </p>
-  <%= f.hidden_field :user_id, current_user.id %>
-  <p>
-    <%= f.collection_select :category, :status, %>
-  </p>
   <p>
     <%= f.submit "Submit" %>
   </p>

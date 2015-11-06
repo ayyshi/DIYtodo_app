@@ -1,5 +1,6 @@
-<!-- view for individual categories -->
-<% @user.categories do |category| %>
+<h1>Your Lists</h1>
+
+<% @user.categories.each do |category| %>
   <h2><%= category.status %></h2>
   <ul>
     <li>
