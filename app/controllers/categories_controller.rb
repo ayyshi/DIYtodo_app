@@ -39,7 +39,11 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def destroy
+  def remove_category
+    @category = Category.find(params[:id])
+    @category.users.delete(current_user)
+
+    redirect_to user_path(current_user)
   end
 
   private

@@ -1,12 +1,12 @@
-<div>
+<div class="categories">
   <% @categories.each do |category| %>
 
-  <h2><%= category.name %></h2>
+  <h2><%= category.name.titleize %></h2>
 
   <ul>
     <% category.posts.each do |post| %>
       <li>
-        <h3><%= post.title %></h3>
+        <h3><%= post.title.titleize %></h3>
         <p><%= post.description %></p>
         <p><img src="<%= post.photo_url%>"></img></p>
         <p>Goal Date: <%= post.goal_date %></p>

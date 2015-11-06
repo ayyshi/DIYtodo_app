@@ -3,6 +3,7 @@ body {
   font-size: 12pt;
   padding: 0px;
   margin: 0 auto;
+  background-color: #49B6CC;
 }
 
 h1 {
@@ -19,12 +20,14 @@ a {
   margin: 0px;
   padding: 15px;
   text-align: right;
+  background-color: #2E727F;
 }
 
 .user_options {
   background-color: pink;
   padding: 15px;
   text-align: center;
+  background-color: #2E727F;
 }
 
 .users{
@@ -56,6 +59,7 @@ a {
   border-radius: 50px 15px 50px 15px;
   text-align: center;
   margin: 10px;
+  background-color: white;
 }
 
 .categories h2 {

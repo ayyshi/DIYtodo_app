@@ -9,7 +9,7 @@
     <% category.posts.each do |post| %>
       <% if post.user_id == @user.id %>
         <li>
-          <h3><%= post.title %></h3>
+          <h3><%= post.title.titleize %></h3>
           <p><%= post.description %></p>
           <p><a href="<%= post.photo_url%>"><img src="<%= post.photo_url%>"></img></a></p>
           <p>Goal Date: <%= post.goal_date %></p>
