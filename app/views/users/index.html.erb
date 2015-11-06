@@ -1,7 +1,10 @@
+<h1><%= link_to "View All Categories", categories_path %></h1>
+
+
 <% @users.each do |user| %>
 <a href="<%= user_path(user) %>">
   <div>
-    <%= user.username %><br>
+    <%= user.username.upcase %><br>
     <img src="<%= user.avatar_url %>"></img>
   </div>
 </a>

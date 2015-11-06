@@ -1,12 +1,21 @@
-<% @categories.each do |category| %>
+<div>
+  <% @categories.each do |category| %>
+
   <h2><%= category.name %></h2>
+
   <ul>
-    <li>
-      <% category.posts.each do |post| %>
+    <% category.posts.each do |post| %>
+      <li>
         <h3><%= post.title %></h3>
         <p><%= post.description %></p>
-        <p><%= post.goal_date %> | <%= post.completed_date %></p>
-      <% end %>
-    </li>
+        <p><img src="<%= post.photo_url%>"></img></p>
+        <p>Goal Date: <%= post.goal_date %></p>
+        <p>Completed On: <%= post.completed_date %></p>
+      </li>
+    <% end %>
   </ul>
-<% end %>
+
+  <% end %>
+</div>
+
+<%= link_to "Back to All Users", users_path %>
