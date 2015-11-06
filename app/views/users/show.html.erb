@@ -1,9 +1,9 @@
 <h1><%= @user.username.upcase %>'s Lists</h1>
 
-<div>
+<div class="categories">
   <% @user.categories.each do |category| %>
 
-  <h2><%= category.name %></h2>
+  <h2><%= category.name.titleize %></h2>
 
   <ul>
     <% category.posts.each do |post| %>
@@ -11,11 +11,11 @@
         <li>
           <h3><%= post.title %></h3>
           <p><%= post.description %></p>
-          <p><img src="<%= post.photo_url%>"></img></p>
+          <p><a href="<%= post.photo_url%>"><img src="<%= post.photo_url%>"></img></a></p>
           <p>Goal Date: <%= post.goal_date %></p>
           <p>Completed On: <%= post.completed_date %></p>
           <% if post.user_id == current_user.id %>
-            <p><%= link_to "edit", edit_post_path(post) %> | <%= link_to "delete", post_path, method: :delete, data: {confirm: "Are you sure?"}%></p>
+            <p><%= link_to "edit", edit_post_path(post) %> | <%= link_to "delete", post_path(post), method: :delete, data: {confirm: "Are you sure?"}%></p>
           <% end %>
         </li>
       <% end %>

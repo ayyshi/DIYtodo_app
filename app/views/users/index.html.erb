@@ -1,11 +1,12 @@
 <h1><%= link_to "View All Categories", categories_path %></h1>
 
-
-<% @users.each do |user| %>
-<a href="<%= user_path(user) %>">
-  <div>
-    <%= user.username.upcase %><br>
-    <img src="<%= user.avatar_url %>"></img>
+<div class="users">
+  <% @users.each do |user| %>
+  <div class="user">
+    <a href="<%= user_path(user) %>">
+        <%= user.username.upcase %><br>
+        <img src="<%= user.avatar_url %>"></img>
+    </a>
   </div>
-</a>
-<% end %>
+  <% end %>
+</div>
