@@ -3,6 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.string :description
+      t.string :photo_url
       t.date   :goal_date
       t.date   :completed_date
 

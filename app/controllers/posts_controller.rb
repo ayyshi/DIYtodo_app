@@ -17,7 +17,9 @@ class PostsController < ApplicationController
     user = current_user
     @post = Post.new(post_params)
     user.posts.push(@post)
-    if !user.categories.include?(@post.category)
+    if user.categories.include?(@post.category)
+
+    else
       user.categories.push(@post.category)
     end
 
@@ -30,6 +32,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @categories = Category.all
   end
 
   def update
@@ -43,10 +46,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = User.find(params[:id])
+    post = Post.find(params[:id])
     post.destroy
 
-    redirect_to category_path
+    redirect_to user_path(current_user)
   end
 
   private
@@ -55,6 +58,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(
       :title,
       :description,
+      :photo_url,
       :goal_date,
       :completed_date,
       :category_id

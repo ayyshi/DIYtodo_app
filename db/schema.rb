@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20151104213429) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string   "status"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151104213429) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
+    t.string   "photo_url"
     t.date     "goal_date"
     t.date     "completed_date"
     t.integer  "user_id"

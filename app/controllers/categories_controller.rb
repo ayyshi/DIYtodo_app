@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
 
     if @category.update(category_params)
-      redirect_to "index"
+      redirect_to user_path(user)
     else
       render "edit"
     end
@@ -46,7 +46,7 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(
-      :status
+      :name
     )
   end
 
