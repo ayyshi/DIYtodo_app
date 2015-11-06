@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
     user.categories.push(category)
 
     if category.save
-      redirect_to "/categories"
+      redirect_to user_path(user)
     else
       render "new"
     end

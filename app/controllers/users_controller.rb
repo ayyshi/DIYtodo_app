@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :authorize, except: [:new, :create]
 
   def index
+    @users = User.all
   end
 
   def show
@@ -50,7 +51,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :username,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :avatar_url
     )
   end
 end
