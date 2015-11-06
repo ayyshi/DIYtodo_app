@@ -15,10 +15,10 @@ class CategoriesController < ApplicationController
 
   def create
     user = current_user
-    category = Category.new(category_params)
-    user.categories.push(category)
+    @category = Category.new(category_params)
+    user.categories.push(@category)
 
-    if category.save
+    if @category.save
       redirect_to user_path(user)
     else
       render "new"
@@ -30,9 +30,9 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    category = Category.find(params[:id])
+    @category = Category.find(params[:id])
 
-    if category.update(category_params)
+    if @category.update(category_params)
       redirect_to "index"
     else
       render "edit"

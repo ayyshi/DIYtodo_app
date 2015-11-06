@@ -18,6 +18,9 @@
       <%= link_to "Create New Post", new_post_path %> |
       <%= link_to "Create New Category", new_category_path %>
     </div>
+    <div class="flash">
+      <%= flash.notice %>
+    </div>
   <% else %>
     <div>
     </div>

@@ -10,12 +10,13 @@
     </div>
   <% end %>
 
-  <p>
-    <%= f.text_field :username, placeholder: "username" %><br>
-    <%= f.password_field :password, placeholder: "password" %><br>
-    <%= f.password_field :password_confirmation, placeholder: "confirm password" %><br>
-    <%= f.text_field :avatar_url, placeholder: "image link" %> <br>
-    <%= f.submit "Submit" %>
-  </p>
-
+  <div>
+    <p>
+      <%= f.text_field :username, placeholder: "username" %><br>
+      <%= f.password_field :password, placeholder: "password" %><br>
+      <%= f.password_field :password_confirmation, placeholder: "confirm password" %><br>
+      <%= f.text_field :avatar_url, placeholder: "image link" %> <br>
+      <%= f.submit "Submit" %>
+    </p>
+  </div>
 <% end %>

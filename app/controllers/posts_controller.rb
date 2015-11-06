@@ -15,13 +15,13 @@ class PostsController < ApplicationController
 
   def create
     user = current_user
-    post = Post.new(post_params)
-    user.posts.push(post)
-    if !user.categories.include?(post.category)
-      user.categories.push(post.category)
+    @post = Post.new(post_params)
+    user.posts.push(@post)
+    if !user.categories.include?(@post.category)
+      user.categories.push(@post.category)
     end
 
-    if post.save
+    if @post.save
       redirect_to user_path(current_user)
     else
       render "new"
@@ -33,9 +33,9 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
+    @post = Post.find(params[:id])
 
-    if post.update(post_params)
+    if @post.update(post_params)
       redirect_to "index"
     else
       render "edit"
