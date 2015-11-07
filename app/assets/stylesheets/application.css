@@ -3,7 +3,8 @@ body {
   font-size: 12pt;
   padding: 0px;
   margin: 0 auto;
-  background-color: #49B6CC;
+  background-color: #FFFFFF;
+  background-image: url(http://www.transparenttextures.com/patterns/arches.png);
 }
 
 h1 {
@@ -15,57 +16,76 @@ a {
   text-decoration: none;
 }
 
-.login {
-  background-color: pink;
+a:hover {
+  color: #49B6CC;
+  text-decoration: none;
+}
+
+#sidebar {
+  position: fixed;
+  top: 33%;
+  width: 200px;
   margin: 0px;
-  padding: 15px;
-  text-align: right;
-  background-color: #2E727F;
-}
-
-.user_options {
-  background-color: pink;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
-  background-color: #2E727F;
+  background-color: #49B6CC;
+  border-radius: 0px 50px 50px 0px;
 }
 
-.users{
-  width: 900px;
+#main {
   height: auto;
-  margin: 0 auto;
+  width: 900px;
+  position: absolute;
+  margin-left: 250px;
+}
+
+.users {
+  position: relative;
   text-align: center;
+  margin: 0 auto;
+}
+
+.users a {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.users a:hover {
+  border: 2px solid #49B6CC;
 }
 
 .users img {
-  width: 100px;
+  width: auto;
   height: 100px;
-}
-
-.user {
-  display: inline-block;
-  margin: 0 auto;
+  margin: 5px;
+  border-radius: 50px;
 }
 
 .categories img {
-  width: 100px;
-  height: auto;
+  width: auto;
+  height: 200px;
 }
 
 .categories li {
   display: inline-block;
   padding: 10px 30px 10px 30px;
-  border: 2px dashed black;
+  border: 2px solid black;
   border-radius: 50px 15px 50px 15px;
   text-align: center;
   margin: 10px;
-  background-color: white;
+  background-color: #49B6CC;
 }
 
 .categories h2 {
   text-align: center;
 }
 
+.form {
+  text-align: center;
+}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

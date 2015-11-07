@@ -1,4 +1,3 @@
-<div class="form">
 <%= form_for @user do |f| %>
 
   <% if @user.errors.any? %>
@@ -13,12 +12,19 @@
 
   <div>
     <p>
-      <%= f.text_field :username, placeholder: "username" %><br>
-      <%= f.password_field :password, placeholder: "password" %><br>
-      <%= f.password_field :password_confirmation, placeholder: "confirm password" %><br>
-      <%= f.text_field :avatar_url, placeholder: "image link" %> <br>
+      <%= f.text_field :username, placeholder: "username" %>
+    </p>
+    <p>
+      <%= f.password_field :password, placeholder: "password" %>
+    </p>
+    <p>
+      <%= f.password_field :password_confirmation, placeholder: "confirm password" %>
+    </p>
+    <p>
+      <%= f.text_field :avatar_url, placeholder: "image link" %>
+    </p>
+    <p>
       <%= f.submit "Submit" %>
     </p>
   </div>
 <% end %>
-</div>

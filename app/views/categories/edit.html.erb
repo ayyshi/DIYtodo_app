@@ -1,7 +1,9 @@
-<h1>Edit/Delete Category</h1>
+<div class="form">
+  <h1>Edit/Delete Category</h1>
 
-<%= render "form" %>
+  <%= render "form" %>
 
-<%= link_to "Delete Post", post_path, method: :delete, data: {confirm: "Are you sure?"}%>
+  <%= link_to "Delete Post", post_path, method: :delete, data: {confirm: "Are you sure?"}%>
 
-<%= link_to "Back to Posts", "/" %>
+  <%= link_to "Back to Your Posts", user_path(current_user) %>
+</div>

@@ -1,3 +1,7 @@
+<div class="form">
+<h1>EDIT/DELETE ACCOUNT</h1>
+
 <%= render "form" %>
 
-<%= link_to "Delete Account", user_path(current_user), method: :delete, data: {confirm: "Are you sure?"}%>
+<%= button_to "Delete Account", user_path(current_user), method: :delete, data: {confirm: "Are you sure?"}%>
+</div>
