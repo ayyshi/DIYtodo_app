@@ -39,7 +39,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def remove_category
+  def destroy
     @category = Category.find(params[:id])
     @category.users.delete(current_user)
 

@@ -6,7 +6,7 @@
   <h2><%= category.name.titleize %></h2>
 
   <% if category.users.include?(current_user) && current_user == @user %>
-      <h2>Delete Category</h2>
+      <%= link_to "Edit Category", edit_category_path(category)%>
   <% end %>
 
   <ul>

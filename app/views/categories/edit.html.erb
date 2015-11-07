@@ -3,7 +3,7 @@
 
   <%= render "form" %>
 
-  <%= link_to "Delete Post", post_path, method: :delete, data: {confirm: "Are you sure?"}%>
+  <%= link_to "Delete Category", category_path(@category),method: :delete, data: {confirm: "Are you sure?"}%>
 
   <%= link_to "Back to Your Posts", user_path(current_user) %>
 </div>
