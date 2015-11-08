@@ -4,7 +4,7 @@
 <%= render "form" %>
 
 <p>
-<%= link_to "Delete Account", user_path(current_user), method: :delete, data: {confirm: "Are you sure?"}%>
+<%= link_to "Delete Account", user_path(@user), method: :delete, data: {confirm: "Are you sure?"}%>
 </p>
 <p>
 <%= link_to "Back to Home", categories_path %>

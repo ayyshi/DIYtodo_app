@@ -17,6 +17,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    if @user[:avatar_url] == ""
+      @user[:avatar_url] = "https://cdn.tutsplus.com/vector/uploads/2013/11/chris-flower-600.png"
+    end
+
     if @user.save
       redirect_to "/"
     else
@@ -39,10 +43,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
-    user.delete
+    @user = User.find(params[:id])
+    @user.delete
 
-    redirect_to "/"
+    redirect_to '/'
+
   end
 
   private
