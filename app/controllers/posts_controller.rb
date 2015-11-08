@@ -57,13 +57,13 @@ class PostsController < ApplicationController
       :title,
       :description,
       :photo_url,
+      :goal_date,
+      :completed_date,
+      :category_id,
       :photo_url2,
       :photo_url3,
       :photo_url4,
-      :photo_url5,
-      :goal_date,
-      :completed_date,
-      :category_id
+      :photo_url5
     )
   end
 end
