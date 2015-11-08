@@ -4,7 +4,7 @@
 
   <% @user.categories.each do |category| %>
 
-  <ul>
+  <div class="category">
     <h2><%= category.name.titleize %></h2>
 
     <% if category.users.include?(current_user) && current_user == @user %>
@@ -15,7 +15,7 @@
 
       <% if post.user_id == @user.id %>
 
-        <li>
+        <div class="post">
           <h3><%= post.title.titleize %></h3>
           <p><%= post.description %></p>
           <div class="thumb">
@@ -30,12 +30,12 @@
 
           <% end %>
 
-        </li>
+        </div>
 
       <% end %>
 
     <% end %>
-  </ul>
+  </div>
 
   <% end %>
 
