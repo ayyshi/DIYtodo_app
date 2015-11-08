@@ -5,7 +5,7 @@
   <% @user.categories.order("name ASC").each do |category| %>
 
   <div class="category">
-    <h2><%= category.name.titleize %></h2>
+    <h2><%= category.name %></h2>
 
     <% if category.users.include?(current_user) && current_user == @user %>
         <p><%= link_to "Edit/Delete This Category", edit_category_path(category)%></p>
@@ -16,7 +16,7 @@
       <% if post.user_id == @user.id %>
 
         <div class="post">
-          <h3><%= post.title.titleize %></h3>
+          <h3><%= link_to "#{post.title}", post_path(post) %></h3>
           <p><%= post.description %></p>
           <div class="thumb">
             <a href="<%= post.photo_url%>"><img src="<%= post.photo_url%>"></img></a>

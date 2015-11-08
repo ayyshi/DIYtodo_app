@@ -28,6 +28,7 @@ h1 {
 h2 {
   word-wrap: break-word;
   word-break: break-all;
+  text-transform: capitalize;
 }
 
 a {
@@ -64,6 +65,14 @@ a:hover {
   text-align: center;
   width: 900px;
   padding-bottom: 100px;
+}
+
+#single_post img {
+  display: inline-block;
+  height: 300px;
+  width: auto;
+  margin: 10px;
+  border-radius: 10px;
 }
 
 .users {
@@ -103,7 +112,7 @@ a:hover {
   width: 200px;
   height: auto;
   padding: 5px 15px 5px 15px;
-  border-radius: 50px 15px 50px 15px;
+  border-radius: 20px;
   text-align: center;
   margin: 10px;
   background: -moz-linear-gradient(top,  rgba(112,228,215,1) 0%, rgba(255,255,255,0.01) 50%); /* FF3.6+ */
@@ -115,6 +124,23 @@ a:hover {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5cd', endColorstr='#03ffffff',GradientType=0 ); /* IE6-9 */
 }
 
+#pics img {
+  width: 450px;
+  height: auto;
+  margin: 0px 100px 0px 100px;
+  border-radius: 10px;
+}
+
+.post h3 a {
+  border: 0px;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+.post h3 {
+  text-transform: capitalize;
+}
+
 div.thumb {
   max-width: 200px;
   max-height: 200px;
@@ -122,7 +148,7 @@ div.thumb {
 }
 
 div.thumb img {
-  max-width: 200px;
+  max-width: 180px;
   height: auto;
 }
 
@@ -149,7 +175,7 @@ div.thumb a {
   border-radius: 5px;
 }
 
-.back a {
+.footer a {
   text-align: center;
   padding: 5px;
   border: 2px solid black;

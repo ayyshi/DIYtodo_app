@@ -2,6 +2,10 @@ class PostsController < ApplicationController
 
   before_action :authorize
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def new
     @post = Post.new
     @categories = Category.all
@@ -53,6 +57,10 @@ class PostsController < ApplicationController
       :title,
       :description,
       :photo_url,
+      :photo_url2,
+      :photo_url3,
+      :photo_url4,
+      :photo_url5,
       :goal_date,
       :completed_date,
       :category_id

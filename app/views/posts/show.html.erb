@@ -1,0 +1,24 @@
+<a class="#top"></a>
+
+<div class="post">
+  <h3><%= @post.title %></h3>
+  <p><%= @post.description %></p>
+  <p id="pics">
+    <a href="<%= @post.photo_url%>"><img src="<%= @post.photo_url%>"></img></a>
+    <a href="<%= @post.photo_url2%>"><img src="<%= @post.photo_url2%>"></img></a>
+    <a href="<%= @post.photo_url3%>"><img src="<%= @post.photo_url3%>"></img></a>
+    <a href="<%= @post.photo_url4%>"><img src="<%= @post.photo_url4%>"></img></a>
+    <a href="<%= @post.photo_url5%>"><img src="<%= @post.photo_url5%>"></img></a>
+  </p>
+  <p>Goal Date: <%= @post.goal_date %></p>
+  <p>Completed On: <%= @post.completed_date %></p>
+</div>
+
+<div class="footer">
+  <% if @post.user_id == current_user.id %>
+    <p><%= link_to "edit", edit_post_path(@post) %> <%= link_to "delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}%></p>
+  <% end %>
+
+  <%= link_to "Back to Home", categories_path %>
+  <p><a href="#top">Back to the Top</a></p>
+</div>

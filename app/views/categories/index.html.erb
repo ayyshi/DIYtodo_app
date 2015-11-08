@@ -5,14 +5,14 @@
   <% @categories.order("name ASC").each do |category| %>
 
   <div class="category">
-    <h2><%= category.name.titleize %></h2>
+    <h2><%= category.name %></h2>
     <% category.posts.order("title ASC").each do |post| %>
       <div class="post">
-        <h3><%= post.title.titleize %></h3>
+        <h3><%= link_to "#{post.title}", post_path(post) %></h3>
         <p>by: <%= post.user.username %></p>
         <p><%= post.description %></p>
         <div class="thumb">
-          <img src="<%= post.photo_url%>"></img>
+          <a href="<%= post.photo_url%>"><img src="<%= post.photo_url%>"></img></a>
         </div>
         <p>Goal Date: <%= post.goal_date %></p>
         <p>Completed On: <%= post.completed_date %></p>

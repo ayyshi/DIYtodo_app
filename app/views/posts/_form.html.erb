@@ -18,7 +18,12 @@
       description<br><%= f.text_area :description %>
     </p>
     <p>
-      photo url<br><%= f.text_field :photo_url %>
+      pictures
+      <br><%= f.text_field :photo_url, placeholder: 'picture 1' %>
+      <br><%= f.text_field :photo_url2, placeholder: 'picture 2' %>
+      <br><%= f.text_field :photo_url3, placeholder: 'picture 3' %>
+      <br><%= f.text_field :photo_url4, placeholder: 'picture 4' %>
+      <br><%= f.text_field :photo_url5, placeholder: 'picture 5' %>
     </p>
     <p>
       goal date<br><%= f.date_field :goal_date %>
