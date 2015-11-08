@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user[:avatar_url] == ""
+    if @user[:avatar_url].blank?
       @user[:avatar_url] = "https://cdn.tutsplus.com/vector/uploads/2013/11/chris-flower-600.png"
     end
 
