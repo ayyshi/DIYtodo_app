@@ -3,5 +3,10 @@
 
 <%= render "form" %>
 
-<%= link_to "Back to Your Lists", user_path(current_user) %>
+<p>
+  <%= link_to "Back Your Lists", users_path(current_user) %>
+</p>
+<p>
+  <%= link_to "Back to Home", categories_path %>
+</p>
 </div>

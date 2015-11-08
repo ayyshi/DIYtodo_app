@@ -1,10 +1,11 @@
-<h1>HI!!! HERE ARE YOUR FELLOW USERS!</h1>
-
 <div class="users">
-<% @users.each do |user| %>
+  <h1>HI!!! HERE ARE YOUR FELLOW USERS!</h1>
+  <% @users.each do |user| %>
   <a href="<%= user_path(user) %>">
     <%= user.username.upcase %><br>
       <img src="<%= user.avatar_url %>"></img>
   </a>
-<% end %>
+  <% end %>
 </div>
+
+<p class="back"><%= link_to "Back to Home", categories_path %></p>

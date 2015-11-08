@@ -1,5 +1,11 @@
 <div class="form">
   <h1>New Post</h1>
   <%= render "form" %>
-  <%= link_to "Back to Posts", users_path %>
+
+  <p>
+    <%= link_to "Back Your Lists", user_path(current_user) %>
+  </p>
+  <p>
+    <%= link_to "Back to Home", categories_path %>
+  </p>
 </div>

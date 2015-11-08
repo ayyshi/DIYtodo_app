@@ -3,5 +3,10 @@
 
 <%= render "form" %>
 
-<%= button_to "Delete Account", user_path(current_user), method: :delete, data: {confirm: "Are you sure?"}%>
+<p>
+<%= link_to "Delete Account", user_path(current_user), method: :delete, data: {confirm: "Are you sure?"}%>
+</p>
+<p>
+<%= link_to "Back to Home", categories_path %>
+</p>
 </div>

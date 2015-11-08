@@ -1,15 +1,16 @@
+<a class="#top"></a>
+<div class="categories">
 <h1><%= @user.username.upcase %>'s Lists</h1>
 
-<div class="categories">
   <% @user.categories.each do |category| %>
 
-  <h2><%= category.name.titleize %></h2>
-
-  <% if category.users.include?(current_user) && current_user == @user %>
-      <%= link_to "Edit Category", edit_category_path(category)%>
-  <% end %>
-
   <ul>
+    <h2><%= category.name.titleize %></h2>
+
+    <% if category.users.include?(current_user) && current_user == @user %>
+        <p><%= link_to "Edit/Delete This Category", edit_category_path(category)%></p>
+    <% end %>
+    <br>
     <% category.posts.each do |post| %>
 
       <% if post.user_id == @user.id %>
@@ -17,13 +18,15 @@
         <li>
           <h3><%= post.title.titleize %></h3>
           <p><%= post.description %></p>
-          <p><a href="<%= post.photo_url%>"><img src="<%= post.photo_url%>"></img></a></p>
+          <div class="thumb">
+            <a href="<%= post.photo_url%>"><img src="<%= post.photo_url%>"></img></a>
+          </div>
           <p>Goal Date: <%= post.goal_date %></p>
           <p>Completed On: <%= post.completed_date %></p>
 
           <% if post.user_id == current_user.id %>
 
-            <p><%= link_to "edit", edit_post_path(post) %> | <%= link_to "delete", post_path(post), method: :delete, data: {confirm: "Are you sure?"}%></p>
+            <p><%= link_to "edit", edit_post_path(post) %> <%= link_to "delete", post_path(post), method: :delete, data: {confirm: "Are you sure?"}%></p>
 
           <% end %>
 
@@ -35,6 +38,7 @@
   </ul>
 
   <% end %>
-</div>
 
-<%= link_to "Back to All Users", users_path %>
+<%= link_to "Back to Home", categories_path %>
+<p><a href="#top">Back to the Top</a></p>
+</div>
