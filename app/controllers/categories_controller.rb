@@ -6,9 +6,6 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  def show
-  end
-
   def new
     @category = Category.new
   end
@@ -42,6 +39,10 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.users.delete(current_user)
+
+    if @category.posts == nil
+      @category.destroy
+    end
 
     redirect_to user_path(current_user)
   end

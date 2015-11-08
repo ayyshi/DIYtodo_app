@@ -13,11 +13,12 @@
       <p>
       Signed in as <%= current_user.username.upcase %></p>
       <p>
-      <%= link_to "Home", categories_path %> | 
+      <%= link_to "Home", categories_path %> |
       <%= link_to "Logout", logout_path %></p>
       <p>
         <%= link_to "Edit Account", edit_user_path(current_user) %>
       </p>
+      <hr>
       <p>
       <%= link_to "View Other User's Lists", users_path %></p>
       <p>
