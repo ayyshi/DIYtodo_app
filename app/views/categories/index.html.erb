@@ -2,11 +2,11 @@
 <div class="categories">
   <h1>All Lists</h1>
 
-  <% @categories.each do |category| %>
+  <% @categories.order("name ASC").each do |category| %>
 
   <div class="category">
     <h2><%= category.name.titleize %></h2>
-    <% category.posts.each do |post| %>
+    <% category.posts.order("title ASC").each do |post| %>
       <div class="post">
         <h3><%= post.title.titleize %></h3>
         <p>by: <%= post.user.username %></p>

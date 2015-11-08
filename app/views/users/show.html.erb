@@ -2,7 +2,7 @@
 <div class="categories">
 <h1><%= @user.username.upcase %>'s Lists</h1>
 
-  <% @user.categories.each do |category| %>
+  <% @user.categories.order("name ASC").each do |category| %>
 
   <div class="category">
     <h2><%= category.name.titleize %></h2>
@@ -11,7 +11,7 @@
         <p><%= link_to "Edit/Delete This Category", edit_category_path(category)%></p>
     <% end %>
     <br>
-    <% category.posts.each do |post| %>
+    <% category.posts.order("title ASC").each do |post| %>
 
       <% if post.user_id == @user.id %>
 

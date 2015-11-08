@@ -1,6 +1,6 @@
 <div class="users">
   <h1>HI!!! HERE ARE YOUR FELLOW USERS!</h1>
-  <% @users.each do |user| %>
+  <% @users.order("username ASC").each do |user| %>
   <a href="<%= user_path(user) %>">
     <%= user.username.upcase %><br>
       <img src="<%= user.avatar_url %>"></img>
