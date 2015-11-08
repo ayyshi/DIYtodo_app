@@ -8,4 +8,4 @@ This app is designed for the convince of
 
 1. A user can create an account
 2. Users can login
-3. 
+3.

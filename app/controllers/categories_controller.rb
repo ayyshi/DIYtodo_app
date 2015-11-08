@@ -40,7 +40,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.users.delete(current_user)
 
-    if @category.posts == nil
+    if @category.posts.blank?
       @category.destroy
     end
 
