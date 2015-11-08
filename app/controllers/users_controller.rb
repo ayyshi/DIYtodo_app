@@ -18,7 +18,12 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user[:avatar_url].blank?
-      @user[:avatar_url] = "https://cdn.tutsplus.com/vector/uploads/2013/11/chris-flower-600.png"
+      
+      suckr = ImageSuckr::GoogleSuckr.new
+      image = suckr.get_image_url({"q" => "icon"})
+
+      @user[:avatar_url] = "#{image}"
+
     end
 
     if @user.save
