@@ -2,11 +2,16 @@
 <div class="categories">
   <h1>All Lists</h1>
 
+  <%= link_to "A to Z", categories_path %>
+
   <% @categories.order("name ASC").each do |category| %>
 
   <div class="category">
+
     <h2><%= category.name %></h2>
+
     <% category.posts.order("title ASC").each do |post| %>
+
       <div class="post">
         <h3><%= link_to "#{post.title}", post_path(post) %></h3>
         <p>by: <%= post.user.username %></p>
