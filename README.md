@@ -20,6 +20,7 @@ This app is designed for the convince of crafters everywhere to keep track of ta
 ### Unsolved problems
 1. image_suckr gem doesn't always provide an image
 2. the image tag for the post photos still generate even when the attribute is empty
+3. evening out the dynamic post divs
 
 ### Functionality to implement in later versions
 
