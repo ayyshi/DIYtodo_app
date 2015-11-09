@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     if @user[:avatar_url].blank?
       suckr = ImageSuckr::GoogleSuckr.new
-      image = suckr.get_image_url({"q" => "icon"})
+      image = suckr.get_image_url({"q" => "#{@user.username}"})
       @user[:avatar_url] = "#{image}"
     end
 
@@ -49,7 +49,6 @@ class UsersController < ApplicationController
     @user.delete
 
     redirect_to '/'
-
   end
 
   private

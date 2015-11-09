@@ -9,10 +9,10 @@ This app is designed for the convince of crafters everywhere to keep track of ta
 1. A user can create an account
 2. Users can choose to use a random avatar
 3. Existing users can:
-  1. Edit/delete their account
-  2. Create/view their own lists
-  3. Delete lists from their own view without effecting another user's lists
-  4. Add a post to any list created
-  5. Edit/delete only posts they created
-  6. View another user's lists
-  7. All lists and posts are views in alphabetical order
+  - Edit/delete their account
+  - Create/view their own lists
+  - Delete lists from their own view without effecting another user's lists
+  - Add a post to any list created
+  - Edit/delete only posts they created
+  - View another user's lists
+4. All lists and posts are views in alphabetical order
