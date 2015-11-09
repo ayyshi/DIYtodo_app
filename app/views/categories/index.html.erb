@@ -2,8 +2,6 @@
 <div class="categories">
   <h1>All Lists</h1>
 
-  <%= link_to "A to Z", categories_path %>
-
   <% @categories.order("name ASC").each do |category| %>
 
   <div class="category">
