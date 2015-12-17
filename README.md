@@ -1,6 +1,11 @@
 # Crafting To-Do List App
 
-### [Crafty To-Do App](https://blooming-tundra-3951.herokuapp.com/)
+---
+
+### [Crafty To-Do App](https://diytodo.herokuapp.com/categories)
+### username: test, password: password
+
+---
 
 This app is designed for the convince of crafters everywhere to keep track of task lists. A list with any title can be created and posts can be added with the option to view all lists across all users.
 
